@@ -17,6 +17,9 @@
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         .container {
             max-width: 800px;
@@ -40,6 +43,15 @@
         ul li a:hover {
             text-decoration: underline;
         }
+        .search {
+            margin-bottom: 1rem;
+        }
+        .search input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -47,8 +59,11 @@
         <h1>測試工程師知識庫</h1>
     </header>
     <div class="container">
+        <div class="search">
+            <input type="text" id="search" placeholder="搜尋目錄..." onkeyup="filterList()">
+        </div>
         <h2>目錄</h2>
-        <ul>
+        <ul id="directory">
             <li><a href="docs/01_Test_Strategy_and_Policies/README.md">01_Test_Strategy_and_Policies</a></li>
             <li><a href="docs/02_Testing_Methods_and_Theories/README.md">02_Testing_Methods_and_Theories</a></li>
             <li><a href="docs/03_Test_Case_Design_and_Repository/README.md">03_Test_Case_Design_and_Repository</a></li>
@@ -57,5 +72,20 @@
             <li><a href="docs/06_Reports_and_Metrics_Archive/README.md">06_Reports_and_Metrics_Archive</a></li>
         </ul>
     </div>
+    <script>
+        function filterList() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const items = document.querySelectorAll('#directory li');
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchInput)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
