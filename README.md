@@ -6,26 +6,21 @@ Knowledge as a Test Engineer.
 這個專案用來存放測試工程師的專業知識文獻。檔案架構如下：
 
 - `docs/` - 文獻根目錄
-  - `01_Strategy_&_Planning/` - 測試策略與規劃
-    - `Test_Strategy_Templates/` - 不同專案類型的策略模板
-    - `Risk_Assessment/` - 風險評估與優先等級劃分
-    - `Test_Plan_Samples/` - 標準測試計畫書範本
-  - `02_Methodologies/` - 常用測試手法
-    - `Black_Box/` - 黑箱測試手法
-    - `White_Box/` - 白箱測試手法
-    - `Non-Functional/` - 非功能性測試
-    - `Exploratory_Testing/` - 探索性測試
-  - `03_Test_Design_&_Writing/` - 測項撰寫規範
-    - `Test_Case_Standards/` - 測項結構標準
-    - `Checklists/` - 功能檢查表
-    - `Boundary_Conditions/` - 邊界條件清單
-  - `04_Tips_&_Best_Practices/` - 常用技巧與實務
-    - `Troubleshooting/` - 問題排查技巧
-    - `Tools_Guide/` - 工具使用指南
-    - `Test_Data_Management/` - 測試資料管理
-  - `05_Templates_&_Resources/` - 模板與資源
-    - `Bug_Report_Templates/` - Bug 報告模板
-    - `Glossary/` - 專業術語表
+  - `01_Test_Strategy_and_Policies/` - 測試策略與規範
+  - `02_Testing_Methods_and_Theories/` - 測試手法與理論
+  - `03_Test_Case_Design_and_Repository/` - 測項設計與案例庫
+  - `04_Skills_and_Heuristics/` - 常用技巧與啟發式思維
+  - `05_Tools_Environment_and_Automation/` - 工具、環境與自動化
+    - `Automation_Frameworks/` - 自動化框架相關文獻
+  - `06_Reports_and_Metrics_Archive/` - 報告與指標封存
+  - `07_Personal_Insights/` - 個人經驗與學習紀錄
+    - `Case_Studies/` - 案例研究
+    - `Experience_Stories/` - 經驗故事
+    - `Lessons_Learned/` - 經驗教訓
+  - `08_Strategy_Generation/` - 策略生成資源
+    - `Templates/` - 模板
+    - `Guidelines/` - 指南
+    - `Automation_Tools/` - 自動化工具
 
 每個子資料夾內可以放置相關的 Markdown 檔案來記錄知識點。
 
