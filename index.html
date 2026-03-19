@@ -17,6 +17,9 @@
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         .container {
             max-width: 800px;
@@ -40,6 +43,23 @@
         ul li a:hover {
             text-decoration: underline;
         }
+        .search {
+            margin-bottom: 1rem;
+        }
+        .search input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submenu {
+            display: none;
+            margin-left: 20px;
+        }
+        .folder {
+            cursor: pointer;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -47,15 +67,82 @@
         <h1>測試工程師知識庫</h1>
     </header>
     <div class="container">
+        <div class="search">
+            <input type="text" id="search" placeholder="搜尋目錄..." onkeyup="filterList()">
+        </div>
         <h2>目錄</h2>
-        <ul>
-            <li><a href="docs/01_Test_Strategy_and_Policies/README.md">01_Test_Strategy_and_Policies</a></li>
-            <li><a href="docs/02_Testing_Methods_and_Theories/README.md">02_Testing_Methods_and_Theories</a></li>
-            <li><a href="docs/03_Test_Case_Design_and_Repository/README.md">03_Test_Case_Design_and_Repository</a></li>
-            <li><a href="docs/04_Skills_and_Heuristics/README.md">04_Skills_and_Heuristics</a></li>
-            <li><a href="docs/05_Tools_Environment_and_Automation/README.md">05_Tools_Environment_and_Automation</a></li>
-            <li><a href="docs/06_Reports_and_Metrics_Archive/README.md">06_Reports_and_Metrics_Archive</a></li>
+        <ul id="directory">
+            <li>
+                <span class="folder" onclick="toggleSubmenu(this)">01_Knowledge_Base</span>
+                <ul class="submenu">
+                    <li><a href="docs/01_Knowledge_Base/Test_Strategy_and_Policies/README.md">Test_Strategy_and_Policies</a></li>
+                    <li><a href="docs/01_Knowledge_Base/Testing_Methods_and_Theories/README.md">Testing_Methods_and_Theories</a></li>
+                    <li><a href="docs/01_Knowledge_Base/Test_Case_Design_and_Repository/README.md">Test_Case_Design_and_Repository</a></li>
+                    <li><a href="docs/01_Knowledge_Base/Reports_and_Metrics_Archive/README.md">Reports_and_Metrics_Archive</a></li>
+                </ul>
+            </li>
+            <li>
+                <span class="folder" onclick="toggleSubmenu(this)">02_Methods</span>
+                <ul class="submenu">
+                    <li><a href="docs/02_Methods/Skills_and_Heuristics/README.md">Skills_and_Heuristics</a></li>
+                    <li><a href="docs/02_Methods/Tools_Environment_and_Automation/README.md">Tools_Environment_and_Automation</a></li>
+                    <li><a href="docs/02_Methods/Automation_Frameworks/README.md">Automation_Frameworks</a></li>
+                </ul>
+            </li>
+            <li>
+                <span class="folder" onclick="toggleSubmenu(this)">03_Personal_Insights</span>
+                <ul class="submenu">
+                    <li><a href="docs/03_Personal_Insights/Experience_Stories/README.md">Experience_Stories</a></li>
+                    <li><a href="docs/03_Personal_Insights/Lessons_Learned/README.md">Lessons_Learned</a></li>
+                    <li><a href="docs/03_Personal_Insights/Case_Studies/README.md">Case_Studies</a></li>
+                </ul>
+            </li>
+            <li>
+                <span class="folder" onclick="toggleSubmenu(this)">04_Strategy_Generation</span>
+                <ul class="submenu">
+                    <li><a href="docs/04_Strategy_Generation/Templates/README.md">Templates</a></li>
+                    <li><a href="docs/04_Strategy_Generation/Guidelines/README.md">Guidelines</a></li>
+                    <li><a href="docs/04_Strategy_Generation/Automation_Tools/README.md">Automation_Tools</a></li>
+                </ul>
+            </li>
         </ul>
+
+        <script>
+            function toggleSubmenu(element) {
+                const submenu = element.nextElementSibling;
+                if (submenu.style.display === "none" || submenu.style.display === "") {
+                    submenu.style.display = "block";
+                } else {
+                    submenu.style.display = "none";
+                }
+            }
+        </script>
+
+        <style>
+            .submenu {
+                display: none;
+                margin-left: 20px;
+            }
+            .folder {
+                cursor: pointer;
+                font-weight: bold;
+            }
+        </style>
     </div>
+    <script>
+        function filterList() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const items = document.querySelectorAll('#directory li');
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchInput)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
