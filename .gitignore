@@ -1,2 +1,7 @@
 # Ignore camera logcat tool script
 /docs/05_Tools_Environment_and_Automation/camera_logcat_tool.sh
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
