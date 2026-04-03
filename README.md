@@ -1,6 +1,8 @@
 # As_a_tester
 Knowledge as a Test Engineer.
 
+url : https://rookiepanislearning.github.io/As_a_tester/
+
 ## 專案結構
 
 這個專案用來存放測試工程師的專業知識文獻。檔案架構如下：
